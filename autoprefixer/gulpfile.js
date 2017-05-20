@@ -1,14 +1,20 @@
-var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
+// importing gulp
+const gulp = require('gulp');
+// including plugins
+const autoprefixer = require('gulp-autoprefixer');
 
-
-gulp.task('styles',function() {
-  gulp.src('css/styles.css')
-    .pipe(autoprefixer())
-    .pipe(gulp.dest('build'))
+// two args: name, function to execute
+gulp.task('styles', function() {
+    gulp.src('css/styles.css')
+        // sending contents to autoprefixer
+        .pipe(autoprefixer())
+       // sending output, writing files
+        .pipe(gulp.dest('build'))
 });
 
-
-gulp.task('watch',function() {
-  gulp.watch('css/styles.css', ['styles']);
-});
+// creating a task called default
+gulp.task('watch', function() {
+    // handling changes to styles - takes an array as 2nd arg
+    // when files change, styles task is executed
+    gulp.watch('css/styles.css', ['styles']);
+})
