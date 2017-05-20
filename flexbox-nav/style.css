@@ -43,16 +43,40 @@ a:hover {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  /*flex-direction: row;*/
   
 }
 
+/* Flex Items */
+.flex-nav li {
+  /* Takes 3x amount of extra space */
+  flex: 3;
+}
+.flex-nav .social {
+  flex: 1;
+}
 
 @media all and (max-width:1000px) {
-  
+  .flex-nav ul {
+    flex-wrap: wrap;
+  }
 
+  .flex-nav li {
+    /* 50% wide, evenly divy up extra space */
+    flex:1 1 200px;
+  }
+
+  /* Resizing social links */
+  .flex-nav .social {
+    flex: 1 1 25%;
+  }
 }
 
 @media all and (max-width:500px) {
-  
+  .flex-nav li {
+    /* Overrides flex basis - stacks items vertically */
+    flex-basis: 100%;
+  }
 
 }
