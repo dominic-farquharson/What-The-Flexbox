@@ -34,3 +34,18 @@ a {
 
 /* Flexbox Starts Here: */
 
+/*  Flex container */
+.elements {
+  display: flex;
+  /* Doesn't wrap by default */
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+/* Flex items */
+.item {
+  /* Default: as high or low as it needs to be*/
+  flex: 1 1 calc(33.33% - 20px);
+}
+
